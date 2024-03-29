@@ -1,0 +1,74 @@
+{
+  "title": "Taxon",
+  "uid": "taxon",
+  "schema": [
+    {
+      "data_type": "text",
+      "display_name": "Title",
+      "field_metadata": {
+        "_default": true,
+        "description": "The name of the category or subcategory as it should be displayed.",
+        "version": 3
+      },
+      "mandatory": true,
+      "uid": "title",
+      "unique": true,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "data_type": "text",
+      "display_name": "Description",
+      "uid": "description",
+      "field_metadata": {
+        "description": "An explanation of the category, possibly including what types of products it encompasses.",
+        "default_value": "",
+        "multiline": true,
+        "version": 3
+      },
+      "format": "",
+      "error_messages": { "format": "" },
+      "mandatory": false,
+      "multiple": false,
+      "non_localizable": false,
+      "unique": false
+    },
+    {
+      "data_type": "reference",
+      "display_name": "Taxons",
+      "reference_to": ["taxon"],
+      "field_metadata": {
+        "ref_multiple": true,
+        "ref_multiple_content_types": true,
+        "description": "Subcategories or nested categories within this taxon, allowing for a multi-level taxonomy structure."
+      },
+      "uid": "taxons",
+      "mandatory": false,
+      "multiple": false,
+      "non_localizable": false,
+      "unique": false
+    },
+    {
+      "data_type": "reference",
+      "display_name": "Products",
+      "reference_to": ["product"],
+      "field_metadata": {
+        "ref_multiple": true,
+        "ref_multiple_content_types": true,
+        "description": "Products that fall under this specific category."
+      },
+      "uid": "products",
+      "mandatory": false,
+      "multiple": false,
+      "non_localizable": false,
+      "unique": false
+    }
+  ],
+  "description": "Categories or subcategories within a taxonomy. Help to organize products into hierarchical structures. A taxon can reference other taxons, for nested categorization, and link to specific products that fall under it.",
+  "options": {
+    "is_page": false,
+    "singleton": false,
+    "sub_title": [],
+    "title": "title"
+  }
+}

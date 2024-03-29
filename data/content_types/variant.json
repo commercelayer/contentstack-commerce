@@ -1,0 +1,79 @@
+{
+  "title": "Variant",
+  "uid": "variant",
+  "schema": [
+    {
+      "data_type": "text",
+      "display_name": "Title",
+      "field_metadata": {
+        "_default": true,
+        "instruction": "",
+        "description": "The unique name or title of this particular variant",
+        "version": 3
+      },
+      "mandatory": true,
+      "uid": "title",
+      "unique": true,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "data_type": "text",
+      "display_name": "Description",
+      "uid": "description",
+      "field_metadata": {
+        "description": "A description that details the specifics of this variant, such as its unique features or differences from other variants.",
+        "default_value": "",
+        "multiline": true,
+        "version": 3
+      },
+      "format": "",
+      "error_messages": { "format": "" },
+      "mandatory": false,
+      "multiple": false,
+      "non_localizable": false,
+      "unique": false
+    },
+    {
+      "data_type": "text",
+      "display_name": "SKU",
+      "uid": "sku",
+      "field_metadata": {
+        "description": "Stock Keeping Unit, a unique identifier for each variant used for inventory management.",
+        "default_value": "",
+        "version": 3
+      },
+      "format": "",
+      "error_messages": { "format": "" },
+      "mandatory": true,
+      "multiple": false,
+      "non_localizable": false,
+      "unique": true
+    },
+    {
+      "data_type": "file",
+      "display_name": "Images",
+      "uid": "images",
+      "field_metadata": {
+        "description": "Visual representations of the variant, providing a clear and accurate portrayal of the product appearance.",
+        "rich_text_type": "standard",
+        "image": true
+      },
+      "mandatory": false,
+      "multiple": true,
+      "non_localizable": false,
+      "unique": false,
+      "dimension": {
+        "width": { "min": null, "max": null },
+        "height": { "min": null, "max": null }
+      }
+    }
+  ],
+  "description": "Represents a specific variant of a product. Variants are typically different versions of a product, differentiated by attributes like size, color, or other specifications. Each variant has a unique SKU.",
+  "options": {
+    "is_page": false,
+    "singleton": false,
+    "sub_title": [],
+    "title": "title"
+  }
+}

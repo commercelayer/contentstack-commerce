@@ -1,0 +1,59 @@
+{
+  "title": "Taxonomy",
+  "uid": "taxonomy",
+  "schema": [
+    {
+      "data_type": "text",
+      "display_name": "Title",
+      "field_metadata": {
+        "_default": true,
+        "description": "The name of the taxonomy, usually representing a broad category.",
+        "version": 3
+      },
+      "mandatory": true,
+      "uid": "title",
+      "unique": true,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "data_type": "text",
+      "display_name": "Description",
+      "uid": "description",
+      "field_metadata": {
+        "description": "A general overview of the taxonomy purpose and what types of products it includes.",
+        "default_value": "",
+        "multiline": true,
+        "version": 3
+      },
+      "format": "",
+      "error_messages": { "format": "" },
+      "mandatory": false,
+      "multiple": false,
+      "non_localizable": false,
+      "unique": false
+    },
+    {
+      "data_type": "reference",
+      "display_name": "Taxons",
+      "reference_to": ["taxon"],
+      "field_metadata": {
+        "ref_multiple": true,
+        "ref_multiple_content_types": true,
+        "description": "The individual categories or \"taxons\" that make up the levels of this taxonomy."
+      },
+      "uid": "taxons",
+      "mandatory": false,
+      "multiple": false,
+      "non_localizable": false,
+      "unique": false
+    }
+  ],
+  "description": "Categorization system used to organize products. A taxonomy is a hierarchical structure comprising various taxons. This content type defines the broad categories and their relationships, serving as a framework for the classification of products.",
+  "options": {
+    "is_page": false,
+    "singleton": false,
+    "sub_title": [],
+    "title": "title"
+  }
+}

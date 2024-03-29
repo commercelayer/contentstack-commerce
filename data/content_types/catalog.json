@@ -1,0 +1,59 @@
+{
+  "title": "Catalog",
+  "uid": "catalog",
+  "schema": [
+    {
+      "data_type": "text",
+      "display_name": "Title",
+      "field_metadata": {
+        "_default": true,
+        "description": "The title of the catalog, which may denote its purpose or the collection it represents.",
+        "version": 3
+      },
+      "mandatory": true,
+      "uid": "title",
+      "unique": true,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "data_type": "text",
+      "display_name": "Description",
+      "uid": "description",
+      "field_metadata": {
+        "description": "Detailed information about the catalog, including its target audience or the range of products it includes.",
+        "default_value": "",
+        "multiline": true,
+        "version": 3
+      },
+      "format": "",
+      "error_messages": { "format": "" },
+      "mandatory": false,
+      "multiple": false,
+      "non_localizable": false,
+      "unique": false
+    },
+    {
+      "data_type": "reference",
+      "display_name": "Taxonomies",
+      "reference_to": ["taxonomy"],
+      "field_metadata": {
+        "ref_multiple": true,
+        "ref_multiple_content_types": true,
+        "description": "The taxonomies included in this catalog, which structure the organization of the products within."
+      },
+      "uid": "category_systems",
+      "mandatory": false,
+      "multiple": false,
+      "non_localizable": false,
+      "unique": false
+    }
+  ],
+  "description": "Collection of products, grouped under specific taxonomies for organizational purposes. It presents a selection of products for specific markets, seasons, or themes. It references taxonomies to leverage structur product categorization.",
+  "options": {
+    "is_page": false,
+    "singleton": false,
+    "sub_title": [],
+    "title": "title"
+  }
+}
