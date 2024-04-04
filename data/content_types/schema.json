@@ -1,0 +1,328 @@
+[
+  {
+    "title": "Product",
+    "uid": "product",
+    "schema": [
+      {
+        "data_type": "text",
+        "display_name": "Title",
+        "field_metadata": { "_default": true, "version": 3 },
+        "mandatory": true,
+        "uid": "title",
+        "unique": true,
+        "multiple": false,
+        "non_localizable": false
+      },
+      {
+        "data_type": "text",
+        "display_name": "Description",
+        "uid": "description",
+        "field_metadata": {
+          "description": "Detailed information about the product, highlighting its features and benefits.",
+          "default_value": "",
+          "multiline": true,
+          "version": 3
+        },
+        "format": "",
+        "error_messages": { "format": "" },
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "data_type": "reference",
+        "display_name": "Variants",
+        "reference_to": ["variant"],
+        "field_metadata": {
+          "ref_multiple": false,
+          "ref_multiple_content_types": true,
+          "description": "Different variations of the product, such as sizes or colors, each with its own SKU."
+        },
+        "uid": "variants",
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      }
+    ],
+    "description": "Offering that can have multiple variants. This content type includes basic product information such as the product name and description. It also references the various variants, for a comprehensive view of all available options.",
+    "options": {
+      "is_page": false,
+      "singleton": false,
+      "sub_title": [],
+      "title": "title"
+    }
+  },
+  {
+    "title": "Taxon",
+    "uid": "taxon",
+    "schema": [
+      {
+        "data_type": "text",
+        "display_name": "Title",
+        "field_metadata": {
+          "_default": true,
+          "description": "The name of the category or subcategory as it should be displayed.",
+          "version": 3
+        },
+        "mandatory": true,
+        "uid": "title",
+        "unique": true,
+        "multiple": false,
+        "non_localizable": false
+      },
+      {
+        "data_type": "text",
+        "display_name": "Description",
+        "uid": "description",
+        "field_metadata": {
+          "description": "An explanation of the category, possibly including what types of products it encompasses.",
+          "default_value": "",
+          "multiline": true,
+          "version": 3
+        },
+        "format": "",
+        "error_messages": { "format": "" },
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "data_type": "reference",
+        "display_name": "Taxons",
+        "reference_to": ["taxon"],
+        "field_metadata": {
+          "ref_multiple": true,
+          "ref_multiple_content_types": true,
+          "description": "Subcategories or nested categories within this taxon, allowing for a multi-level taxonomy structure."
+        },
+        "uid": "taxons",
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "data_type": "reference",
+        "display_name": "Products",
+        "reference_to": ["product"],
+        "field_metadata": {
+          "ref_multiple": true,
+          "ref_multiple_content_types": true,
+          "description": "Products that fall under this specific category."
+        },
+        "uid": "products",
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      }
+    ],
+    "description": "Categories or subcategories within a taxonomy. Help to organize products into hierarchical structures. A taxon can reference other taxons, for nested categorization, and link to specific products that fall under it.",
+    "options": {
+      "is_page": false,
+      "singleton": false,
+      "sub_title": [],
+      "title": "title"
+    }
+  },
+  {
+    "title": "Variant",
+    "uid": "variant",
+    "schema": [
+      {
+        "data_type": "text",
+        "display_name": "Title",
+        "field_metadata": {
+          "_default": true,
+          "instruction": "",
+          "description": "The unique name or title of this particular variant",
+          "version": 3
+        },
+        "mandatory": true,
+        "uid": "title",
+        "unique": true,
+        "multiple": false,
+        "non_localizable": false
+      },
+      {
+        "data_type": "text",
+        "display_name": "Description",
+        "uid": "description",
+        "field_metadata": {
+          "description": "A description that details the specifics of this variant, such as its unique features or differences from other variants.",
+          "default_value": "",
+          "multiline": true,
+          "version": 3
+        },
+        "format": "",
+        "error_messages": { "format": "" },
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "data_type": "text",
+        "display_name": "SKU",
+        "uid": "sku",
+        "field_metadata": {
+          "description": "Stock Keeping Unit, a unique identifier for each variant used for inventory management.",
+          "default_value": "",
+          "version": 3
+        },
+        "format": "",
+        "error_messages": { "format": "" },
+        "mandatory": true,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": true
+      },
+      {
+        "data_type": "file",
+        "display_name": "Images",
+        "uid": "images",
+        "field_metadata": {
+          "description": "Visual representations of the variant, providing a clear and accurate portrayal of the product appearance.",
+          "rich_text_type": "standard",
+          "image": true
+        },
+        "mandatory": false,
+        "multiple": true,
+        "non_localizable": false,
+        "unique": false,
+        "dimension": {
+          "width": { "min": null, "max": null },
+          "height": { "min": null, "max": null }
+        }
+      }
+    ],
+    "description": "Represents a specific variant of a product. Variants are typically different versions of a product, differentiated by attributes like size, color, or other specifications. Each variant has a unique SKU.",
+    "options": {
+      "is_page": false,
+      "singleton": false,
+      "sub_title": [],
+      "title": "title"
+    }
+  },
+  {
+    "title": "Taxonomy",
+    "uid": "taxonomy",
+    "schema": [
+      {
+        "data_type": "text",
+        "display_name": "Title",
+        "field_metadata": {
+          "_default": true,
+          "description": "The name of the taxonomy, usually representing a broad category.",
+          "version": 3
+        },
+        "mandatory": true,
+        "uid": "title",
+        "unique": true,
+        "multiple": false,
+        "non_localizable": false
+      },
+      {
+        "data_type": "text",
+        "display_name": "Description",
+        "uid": "description",
+        "field_metadata": {
+          "description": "A general overview of the taxonomy purpose and what types of products it includes.",
+          "default_value": "",
+          "multiline": true,
+          "version": 3
+        },
+        "format": "",
+        "error_messages": { "format": "" },
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "data_type": "reference",
+        "display_name": "Taxons",
+        "reference_to": ["taxon"],
+        "field_metadata": {
+          "ref_multiple": true,
+          "ref_multiple_content_types": true,
+          "description": "The individual categories or \"taxons\" that make up the levels of this taxonomy."
+        },
+        "uid": "taxons",
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      }
+    ],
+    "description": "Categorization system used to organize products. A taxonomy is a hierarchical structure comprising various taxons. This content type defines the broad categories and their relationships, serving as a framework for the classification of products.",
+    "options": {
+      "is_page": false,
+      "singleton": false,
+      "sub_title": [],
+      "title": "title"
+    }
+  },
+  {
+    "title": "Catalog",
+    "uid": "catalog",
+    "schema": [
+      {
+        "data_type": "text",
+        "display_name": "Title",
+        "field_metadata": {
+          "_default": true,
+          "description": "The title of the catalog, which may denote its purpose or the collection it represents.",
+          "version": 3
+        },
+        "mandatory": true,
+        "uid": "title",
+        "unique": true,
+        "multiple": false,
+        "non_localizable": false
+      },
+      {
+        "data_type": "text",
+        "display_name": "Description",
+        "uid": "description",
+        "field_metadata": {
+          "description": "Detailed information about the catalog, including its target audience or the range of products it includes.",
+          "default_value": "",
+          "multiline": true,
+          "version": 3
+        },
+        "format": "",
+        "error_messages": { "format": "" },
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      },
+      {
+        "data_type": "reference",
+        "display_name": "Taxonomies",
+        "reference_to": ["taxonomy"],
+        "field_metadata": {
+          "ref_multiple": true,
+          "ref_multiple_content_types": true,
+          "description": "The taxonomies included in this catalog, which structure the organization of the products within."
+        },
+        "uid": "category_systems",
+        "mandatory": false,
+        "multiple": false,
+        "non_localizable": false,
+        "unique": false
+      }
+    ],
+    "description": "Collection of products, grouped under specific taxonomies for organizational purposes. It presents a selection of products for specific markets, seasons, or themes. It references taxonomies to leverage structur product categorization.",
+    "options": {
+      "is_page": false,
+      "singleton": true,
+      "sub_title": [],
+      "title": "title"
+    }
+  }
+]

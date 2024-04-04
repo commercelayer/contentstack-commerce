@@ -1,0 +1,33 @@
+{
+  "name": "@commercelayer/contentstack-commerce",
+  "version": "1.0.0",
+  "description": "Command to spin a product catalog content model within Contentstack",
+  "keywords": [
+    "contentstack",
+    "commerce",
+    "product catalog",
+    "commercelayer"
+  ],
+  "homepage": "https://github.com/commercelayer/contentstack-commerce",
+  "bugs": "https://github.com/commercelayer/contentstack-commerce/issues",
+  "repository": "https://github.com/commercelayer/contentstack-commerce",
+  "license": "MIT",
+  "author": "Alex Canessa <alex@commercelayer.io>",
+  "type": "module",
+  "main": "lib/index.js",
+  "scripts": {
+    "login": "csdx auth:login",
+    "migrate": "node ./src/run.js"
+  },
+  "dependencies": {
+    "@contentstack/cli": "^1.16.1",
+    "dotenv": "^16.4.5",
+    "ora": "^8.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0 <21"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
